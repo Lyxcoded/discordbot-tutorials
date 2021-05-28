@@ -1,3 +1,9 @@
 {
+<<<<<<< Updated upstream
     "token": "YOUR_TOKEN"
 }
+=======
+    "token": "YOUR_TOKEN",
+    "prefix": "YOUR_PREFIX"
+}
+>>>>>>> Stashed changes
