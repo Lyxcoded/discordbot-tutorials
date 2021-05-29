@@ -3,17 +3,18 @@ const { MessageEmbed } = require("discord.js")
 module.exports = {
     name: 'ping',
     aliases: ['latency', 'lag'],
-    description: 'The bot will reply with the bot\'s latency',
+    description: 'Replys with the bots latency',
     permissions: 'ADMINISTRATOR',
     guildOnly: true,
-    cooldown: 5,
+    cooldowns: 5,
     execute(message) {
-        message.delete() // Deletes The Command Message.
 
-        let Ping = new MessageEmbed() // The Response Embed
+        message.delete(); // It will deleted the command message.
+
+        let Ping = new MessageEmbed()
         .setTitle(message.guild.name)
         .setDescription(`My Latency Is ${Date.now() - message.createdTimestamp}ms`)
         .setColor('BLUE')
-        message.reply(Ping);
+        message.reply(Ping)
     }
 }

@@ -1,16 +1,16 @@
-const fs = require('fs'); // Defining Fs.
+const fs = require('fs'); // Defining FS.
 const Discord = require('discord.js'); // Defining Discord.
 const client = new Discord.Client(); // Defining The Client.
 const config = require('./config.json'); // Defining The Config File.
 
-client.commands = new Discord.Collection(); // Defining The Collection Of The Command Handler.
-client.cooldowns = new Discord.Collection(); // Defining The Collection Of The Cooldowns.
+client.commands = new Discord.Collection();
+client.cooldowns = new Discord.Collection();
 
-/// Event Handler ///
+// EVENT HANDLER //
 const eventFolders = fs.readdirSync('./events');
 for (const folder of eventFolders) {
     const eventFiles = fs.readdirSync(`./events/${folder}`).filter(file => file.endsWith('.js'));
-    for (const file of eventFiles) {
+    for ( const file of eventFiles) {
         const event = require(`./events/${folder}/${file}`);
         if (event.once) {
             client.once(event.name, (...args) => event.execute(...args, client));
@@ -20,7 +20,7 @@ for (const folder of eventFolders) {
     }
 }
 
-/// Command Handler ///
+// COMMAND HANDLER //
 const commandFolders = fs.readdirSync('./commands');
 for (const folder of commandFolders) {
     const commandFiles = fs.readdirSync(`./commands/${folder}`).filter(file => file.endsWith('.js'));
@@ -30,7 +30,7 @@ for (const folder of commandFolders) {
     }
 }
 
-/// Message Event Listner ///
+// COMMAND MESSAGE EVENT LISTNER //
 client.on('message', message => {
     if (!message.content.startsWith(config.prefix) || message.author.bot ) return;
     

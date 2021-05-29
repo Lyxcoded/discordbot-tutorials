@@ -2,7 +2,7 @@ module.exports = {
     name: 'ready',
     once: true,
     execute(client) {
-        console.log(`Ready, logged in as ${client.user.tag}`);
-        client.user.setActivity('LYXCODE', {type: 'WATCHING'}).catch(console.error)
+        client.user.setActivity('Lyxcode', {type: "WATCHING"}).catch(console.error) // Setting The Bot's Activity and Catching Errors
+        console.log('The bot is now online'); // Console Logging That The Bot Is Now Online.
     }
 }
