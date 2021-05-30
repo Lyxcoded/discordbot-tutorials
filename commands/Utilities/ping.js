@@ -8,9 +8,7 @@ module.exports = {
     guildOnly: true,
     cooldowns: 5,
     execute(message) {
-
-        message.delete(); // It will deleted the command message.
-
+        
         let Ping = new MessageEmbed()
         .setTitle(message.guild.name)
         .setDescription(`My Latency Is ${Date.now() - message.createdTimestamp}ms`)

@@ -14,8 +14,8 @@ module.exports = {
             {name: 'Discriminator', value: `${member.user.discriminator}`, inline: true},
             {name: 'Bot', value: `${member.user.bot}`, inline: true},
             {name: 'Presence', value: `${member.user.presence.status}`, inline: true},
-            {name: 'Joined Server At', value: `${moment(member.joinedAt).format('MM DD YYYY')}`, inline: true},
-            {name: 'Joined Discord At', value: `${moment(member.user.createdAt).format('MM DD YYYY')}`, inline: true}
+            {name: 'Joined Server At', value: `${moment(member.joinedAt).format('MMM DD YYYY')}`, inline: true},
+            {name: 'Joined Discord At', value: `${moment(member.user.createdAt).format('MMM DD YYYY')}`, inline: true}
         )
         .setFooter(`${member.user.username}#${member.user.discriminator}`, member.user.displayAvatarURL({dynamic: true, size: 512}))
         .setColor('RED')
