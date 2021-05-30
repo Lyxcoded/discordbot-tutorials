@@ -1,5 +1,12 @@
 {
     "token": "Your_Token",
-    "prefix": "Your_Prefix"
+    "prefix": "Your_Prefix",
+    
+    "MemberRoleID": "848569968030515201",
+    "WelcomeID": "848571051574427708",
+    "InformationID": "848571356798386206",
+    "GiveawaysID": "848571378377818182",
+    "GetRolesID": "848571392089915403",
+    "MemberLogsID": "848571689238396929"
 }
 
