@@ -7,11 +7,11 @@ client.commands = new Discord.Collection();
 client.cooldowns = new Discord.Collection();
 
 // EVENT HANDLER //
-const eventFolders = fs.readdirSync('./events');
+const eventFolders = fs.readdirSync('./Events');
 for (const folder of eventFolders) {
-    const eventFiles = fs.readdirSync(`./events/${folder}`).filter(file => file.endsWith('.js'));
+    const eventFiles = fs.readdirSync(`./Events/${folder}`).filter(file => file.endsWith('.js'));
     for ( const file of eventFiles) {
-        const event = require(`./events/${folder}/${file}`);
+        const event = require(`./Events/${folder}/${file}`);
         if (event.once) {
             client.once(event.name, (...args) => event.execute(...args, client));
         } else {
@@ -21,11 +21,11 @@ for (const folder of eventFolders) {
 }
 
 // COMMAND HANDLER //
-const commandFolders = fs.readdirSync('./commands');
+const commandFolders = fs.readdirSync('./Commands');
 for (const folder of commandFolders) {
-    const commandFiles = fs.readdirSync(`./commands/${folder}`).filter(file => file.endsWith('.js'));
+    const commandFiles = fs.readdirSync(`./Commands/${folder}`).filter(file => file.endsWith('.js'));
     for (const file of commandFiles) {
-        const command = require(`./commands/${folder}/${file}`);
+        const command = require(`./Commands/${folder}/${file}`);
         client.commands.set(command.name, command);
     }
 }
